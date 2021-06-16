@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <style>
+      .myDiv {
+        display: block;
+        text-align: center;
+        padding-top: 50px;
+        padding-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="{% url 'datesvssessionsview' %}" method="post">
+      {% csrf_token %}
+      <div class="myDiv">
+        <label>Starting Date:</label>
+        {{ form.start_date }}
+      </div>
+      <div class="myDiv">
+        <label>Ending Date:</label>
+        {{ form.end_date }}
+      </div>
+    
+      <div class="myDiv">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>
